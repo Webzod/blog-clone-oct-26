@@ -8,8 +8,10 @@
 <body>
     <header>
         <a href= "{% url 'post-list' %}"><h1>Blog</h1></a>
+        
     </header>
     <main>
+        <a href="{% url 'post-create' %}"><h2> Crear Post</h2></a> 
         {% block content %}
         {% endblock content %}
     </main>
