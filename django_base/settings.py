@@ -128,3 +128,4 @@ MAILERS = {
     },
 }
 LOGIN_REDIRECT_URL = 'post-list'
+LOGOUT_REDIRECT_URL = 'post-list'

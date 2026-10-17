@@ -17,9 +17,12 @@
         <a href="{% url 'post-create' %}"><h2> Crear Post</h2></a> 
 
         {% if user.is_authenticated %}
-            <p>Bienvenido, {{ user.username }}! <a href="{% url 'logout' %}">Cerrar sesión</a></p>
+            <p>Bienvenido, {{ user.username }}! </p>
+                <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Cerrar sesión</button>
         {% else %}
-            <p><a href="{% url 'login' %}">Iniciar sesión</a> 
+            <p><a href="{% url 'login' %}">Iniciar sesión</a></p>
         {% endif %}
 
         {% block content %}
