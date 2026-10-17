@@ -18,11 +18,11 @@
 
         {% if user.is_authenticated %}
             <p>Bienvenido, {{ user.username }}! </p>
-                <form action="{% url 'logout' %}" method="post">
+                <form action="{% url 'logout' %}" method="post"> 
                 {% csrf_token %}
                 <button type="submit">Cerrar sesión</button>
         {% else %}
-            <p><a href="{% url 'login' %}">Iniciar sesión</a></p>
+            <p><a href="{% url 'login' %}">Iniciar sesión</a></p> | <p><a href="{% url 'signup' %}">Registrarse</a></p>
         {% endif %}
 
         {% block content %}
